@@ -1,7 +1,7 @@
 /* General selectors */
 :root {
 	--light-gray: #C5C8C6;
-	--dark-gray: #707880;
+	--dark-gray: #373B41;
 	--red: #CC6666;
 	--light-red: #ebb2af;
 	--orange: #DE935F;
@@ -347,7 +347,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: var(--dark-gray);
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
 	background: #fff;
@@ -429,9 +429,27 @@ footer h4 {
 	padding-bottom: 12px;
 }
 
-
+input {
+	padding-left: 0.3em;
+	margin-right: 0.3em;
+	background-color: var(--light-green);
+	color: var(--dark-gray);
+	font-weight: bold;
+	font-style: italic;
+}
 
 /* Classes */
+.after-input {
+	display: none;
+}
+
+.bordered {
+	border: 1px solid var(--green);
+	border-radius: 0.2em;
+	margin: 0.1em;
+	padding: 0.1em;
+}
+
 .fitImage {
 	max-width: 100%;
 	vertical-align: middle;
@@ -635,7 +653,8 @@ footer h4 {
 
 .header {
 	position: fixed;
-	width: 100%;
+	width: 60%;
+	left: 20vw;
 	z-index: 100;
 	border-radius: 0;
 	top: 0px;
@@ -1040,6 +1059,11 @@ a.arrow-link:hover {
 	width: 35%;
 }
 
+.grid-container-2 {
+	display: grid;
+	grid-template-columns: auto auto;
+	/* reps = number of columns */
+}
 /* Services
     -------------------------------------------------*/
 .grid .text-content {
@@ -1599,6 +1623,19 @@ figcaption .project-creator {
 
 #home {
 	background: #FFFFFF;
+}
+
+#monto {
+	background-color: var(--light-green);
+	border-radius: 0.3em;
+	font-style: italic;
+	font-weight: bold;
+	left: 0.4em;
+	opacity: 0.9;
+	padding-left: 0.1em;
+	position: absolute;
+	top: 0.5em;
+	z-index: 1;
 }
 
 #top {
