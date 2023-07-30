@@ -31,6 +31,7 @@
   <!-- Font Awesome -->
   <link href="font/css/font-awesome.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <script src="js/hrefHandler.js"></script>
 </head>
 
 <body>
@@ -175,6 +176,30 @@
     <div class="container hero-text2">
       <h3>&nbsp;</h3>
     </div>
+  </section>
+  <div id="monto" class="grid-container-2">
+    <div>
+      <div class="bordered">Raised<br>
+      &nbsp;&nbsp;&nbsp;<span id="amountEur">___.___,__ €</span>&nbsp;<br>
+      <span id="amountDkk">_.___.___,__ DKK</span>&nbsp;<br>
+      <div style="height:0.3em"></div></div>
+      <div class="bordered">Started at:<br>
+      <span id="startRegr"></span></div>
+      </div>
+    <div class="bordered">
+      Next milestone:<br>
+      &nbsp;<small>&nbsp;</small><input id="amntEurMs"
+        type="number" value="200000" style="width:6em"
+        onchange="handleMilestoneAmount(this.value)"
+        class="bordered"
+      ></input><br>
+      <span class="after-input"><span id="dateEurMs"></span><br>
+      in <span id="yearsMs"></span> y, at <span id="yearsSelfMs"></span> yo,<br>
+      equals <span id="adjustedAmount"></span>&nbsp;</span>
+    </div>
+  </div>
+  <section id="map">
+    <p class="map-error">Something went wrong... Unable to load map.</p>
   </section>
   <!--<section id="upcomingProjects" class="page-section colord">
 
@@ -519,11 +544,6 @@
       </div>
     </div>
   </section>
-  -->
-  <section id="map">
-    <p class="map-error">Something went wrong... Unable to load map.</p>
-  </section>
-  <!--
   <section id="contactUs" class="contact-parlex">
     <div class="parlex-back">
       <div class="container">
@@ -597,7 +617,66 @@
   </section>
   <a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a>
   -->
+  <script>
+    const amountEurDomObj = document.getElementById("amountEur");
+    const amountDkkDomObj = document.getElementById("amountDkk");
+    const startRegrDomObj = document.getElementById("startRegr");
+    const amntEurMsDomObj = document.getElementById("amntEurMs");
+    const dateEurMsDomObj = document.getElementById("dateEurMs");
+    const yearsMsDomObj = document.getElementById("yearsMs");
+    const yearsSelfMsDomObj = document.getElementById("yearsSelfMs");
+    const adjustedAmountDom = document.getElementById("adjustedAmount");
+    
+    const dg = parseFloat(globalThis.dg);
+    const ae70 = parseInt(globalThis.ae70, 10);
+    const bd = globalThis.bd;
 
+    const milliSecondsPerDay = 24 * 60 * 60 * 1000;
+    const daysBetween1900and1970 = 25569; // Diff Google Sheets and Browser for regression
+    const dayStartRegr = (ae70/dg - daysBetween1900and1970);
+    const startRegr = new Date(
+      dayStartRegr * milliSecondsPerDay
+    ).toISOString().replace("T"," ").substring(0,16);
+    startRegrDomObj.innerText = startRegr;
+
+    function handleMilestoneAmount(amountEurMs) {
+      document.getElementsByClassName("after-input")[0].style.display = "inline";
+      amntEurMsDomObj.innerText = new Intl.NumberFormat(
+        'es-ES', { style: "currency", currency: "EUR" }
+      ).format(amountEurMs);
+      const dayEurMs = (dayStartRegr + amountEurMs/dg) * milliSecondsPerDay;
+      const dateEurMs = new Date(dayEurMs).toISOString().replace("T"," ").substring(0, 16);
+      dateEurMsDomObj.innerText = dateEurMs;
+      const yearsMsInt = (
+        (dayEurMs - Date.now()) / milliSecondsPerDay / 365
+      );
+      yearsMsDomObj.innerText = yearsMsInt.toFixed(2);
+      const inflacion4p = 1.04**yearsMsInt;
+      const yearsSelfMs = (
+        (dayEurMs - new Date(bd).getTime()) / milliSecondsPerDay / 365
+      ).toFixed(2);
+      yearsSelfMsDomObj.innerText = yearsSelfMs;
+      adjustedAmountDom.innerText = new Intl.NumberFormat(
+        'es-ES', { style: "currency", currency: "EUR" }
+      ).format(amountEurMs/inflacion4p);
+    }
+
+    setInterval(
+      ()=>{
+        const currentAmount = (dg*(
+          ( (new Date().getTime()) / milliSecondsPerDay )+daysBetween1900and1970
+        ) - ae70);
+        const currentAmountEur = new Intl.NumberFormat(
+          'es-ES', { style: "currency", currency: "EUR" }
+        ).format(currentAmount);
+        const currentAmountDkk = new Intl.NumberFormat(
+          'es-ES', { style: "currency", currency: "DKK" }
+        ).format(currentAmount/.1343);
+        amountEurDomObj.innerText = currentAmountEur;
+        amountDkkDomObj.innerText = currentAmountDkk;
+      }, 1000
+    )
+  </script>
   <!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]-->
   <script src="js/modernizr-latest.js"></script>
   <script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
