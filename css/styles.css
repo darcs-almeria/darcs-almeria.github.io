@@ -25,6 +25,10 @@
 	background: #a30046;
 }
 
+html {
+	background-color: #000;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700);
 
@@ -47,6 +51,10 @@
 
 	.logo {
 		margin: 0.6em 0 0 0;
+	}
+
+	#monto {
+		display: inline;
 	}
 
 }
@@ -154,6 +162,28 @@
 		display: block;
 		width: 100%;
 	}
+
+	.navbar-toggle {
+		position: absolute;
+		left: calc(100% - 3.5em);
+		float: right;
+		padding: 9px 10px;
+		margin-top: 18px;
+		margin-right: 0px;
+		margin-bottom: 9px;
+		background-color: transparent;
+		border: 1px solid transparent;
+		border-radius: 0;
+		border-color: #000;
+	}
+
+	#monto {
+		display: none;
+	}
+}
+
+@media (min-width: 480px) {
+
 }
 
 @media (max-width: 480px) {
@@ -266,20 +296,6 @@
 		line-height: 18px;
 	}
 
-	.navbar-toggle {
-		position: absolute;
-		left: calc(100% - 3.5em);
-		float: right;
-		padding: 9px 10px;
-		margin-top: 18px;
-		margin-right: 0px;
-		margin-bottom: 9px;
-		background-color: transparent;
-		border: 1px solid transparent;
-		border-radius: 0;
-		border-color: #000;
-	}
-
 	#portfolio .items li {
 		position: relative;
 		float: left;
@@ -308,17 +324,6 @@
 
 	.slides>li>img {
 		object-fit: cover;
-	}
-
-	.flex-caption {
-		top: 50vh;
-		display: inline;
-		height: 53vh;
-		background-color: #000;
-	}
-
-	#monto {
-		display: none;
 	}
 
 	.header {
@@ -666,17 +671,19 @@ input {
 }
 
 .flex-caption {
-	zoom: 1;
-	bottom: 35px;
 	background-color: rgba(0, 0, 0, 1);
+	border-top: 3px solid var(--green);
+	bottom: 0px;
 	color: #000;
+	display: inline;
+	height: 53vh;
+	left: 0px;
 	margin: 0;
 	padding: 25px 25px 25px 30px;
 	position: absolute;
-	left: 0px;
 	right: 0px;
-	bottom: 0px;
-	border-top: 3px solid var(--green);
+	top: 50vh;
+	zoom: 1;
 }
 
 .flex-caption h3 {
