@@ -126,8 +126,11 @@ html {
 		float: left;
 		margin: 0 3px 3px 0;
 		opacity: 1;
+		transform: scale(1, 1);
 		-webkit-transform: scale(1, 1);
+		transition-timing-function: ease-out;
 		-webkit-transition-timing-function: ease-out;
+		transition-duration: 250ms;
 		-webkit-transition-duration: 250ms;
 		-moz-transform: scale(1, 1);
 		-moz-transition-timing-function: ease-out;
@@ -318,7 +321,7 @@ html {
 		top: -6em;
 	}
 
-	#home, .flexslider, .slides, .slides>li, .slides>li>img, .banner-container, .hero-text2 {
+	#home, .flex-slider, .slides, .slides>li, .slides>li>img, .banner-container, .hero-text2 {
 		height: 50vh;
 	}
 
@@ -508,7 +511,7 @@ input {
 	animation-delay: 0s;
 }
 
-.mcbook {
+.mac-book {
 	opacity: 0;
 }
 
@@ -540,11 +543,11 @@ input {
 }
 
 .progress .progress-bar.progress-bar-green {
-	background: #51D4B6;
+	background: #9FDE32;
 }
 
-.progress .progress-bar.progress-bar-lblue {
-	background: #9FDE32;
+.progress .progress-bar.progress-bar-blue {
+	background: #51D4B6;
 }
 
 .feature a {
@@ -636,7 +639,7 @@ input {
 	border-radius: 0px;
 }
 
-.mrgn30 {
+.margin-30 {
 	margin: 30px 0;
 }
 
@@ -886,7 +889,7 @@ input {
 	padding: 35px 0;
 }
 
-.noPadd {
+.no-padding {
 	padding: 0;
 }
 
@@ -1056,7 +1059,7 @@ a.arrow-link:hover {
 	text-align: left;
 }
 
-.pdingBtm30 {
+.padding-bot-30 {
 	padding-bottom: 30px;
 }
 
@@ -1191,7 +1194,7 @@ a.arrow-link:hover {
 	color: #000;
 }
 
-.descrition {
+.description {
 	min-height: 90px;
 	/*text-align: center;*/
 	/*border-bottom: 1px solid #dadde2;*/
@@ -1723,7 +1726,7 @@ figcaption .project-creator {
 	border-bottom: 4px solid #a30046;
 }
 
-#section-strapline {
+#section-strap-line {
 	background: #f00bff;
 	line-height: 42px;
 	clear: both;
