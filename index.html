@@ -628,12 +628,12 @@
     const adjustedAmountDom = document.getElementById("adjustedAmount");
     
     const dg = parseFloat(globalThis.dg);
-    const oa70 = parseInt(globalThis.oa70, 10);
+    const oa00 = parseInt(globalThis.oa00, 10);
     const bd = globalThis.bd;
 
     const milliSecondsPerDay = 24 * 60 * 60 * 1000;
-    const daysBetween1900and1970 = 25569; // Diff Google Sheets and Browser for regression
-    const dayStartRegr = (oa70/dg - daysBetween1900and1970);
+    const daysBetween1900and1900 = 25569; // Diff Google Sheets and Browser for regression
+    const dayStartRegr = (oa00/dg - daysBetween1900and1900);
     console.log("dayStartRegr",dayStartRegr)
     const startRegr = new Date(
       dayStartRegr * milliSecondsPerDay
@@ -666,8 +666,8 @@
     setInterval(
       ()=>{
         const currentAmount = (dg*(
-          ( (new Date().getTime()) / milliSecondsPerDay )+daysBetween1900and1970
-        ) - oa70);
+          ( (new Date().getTime()) / milliSecondsPerDay )+daysBetween1900and1900
+        ) - oa00);
         const currentAmountEur = new Intl.NumberFormat(
           'es-ES', { style: "currency", currency: "EUR" }
         ).format(currentAmount);
