@@ -7,13 +7,13 @@ const dailyGrowth = href.substring(
 globalThis.dg = dailyGrowth === href ? href :
     dailyGrowth.substring(0, dailyGrowth.search("&") === -1 ?
     dailyGrowth.length : dailyGrowth.search("&"));
-const absEursAt1970 = href.substring(
-    href.search("absEursAt1970=") === -1 ? 0 :
-    href.search("absEursAt1970=") + 14
+const offsetAt1970 = href.substring(
+    href.search("offsetAt1970=") === -1 ? 0 :
+    href.search("offsetAt1970=") + 14
 );
-globalThis.ae70 = absEursAt1970 === href ? href :
-    absEursAt1970.substring(0, absEursAt1970.search("&") === -1 ?
-    absEursAt1970.length : absEursAt1970.search("&"));
+globalThis.oa70 = offsetAt1970 === href ? href :
+    offsetAt1970.substring(0, offsetAt1970.search("&") === -1 ?
+    offsetAt1970.length : offsetAt1970.search("&"));
 const birthDay = href.substring(
     href.search("birthDay=") === -1 ? 0 :
     href.search("birthDay=") + 9
