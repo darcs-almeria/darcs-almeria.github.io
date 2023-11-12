@@ -510,6 +510,14 @@ input {
 	display: inline-block;
 }
 
+.img-responsive>img {
+	height: 10em;
+}
+
+.img-fallback {
+	filter: brightness(0.9) blur(0.5px);
+}
+
 .animated {
 	/* -webkit-animation-duration: 1s; */
 	animation-duration: 1s;

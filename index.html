@@ -28,7 +28,6 @@
   <link href="flexslider/flexslider.css" rel="stylesheet" />
   <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- Font Awesome -->
   <link href="font/css/font-awesome.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <script src="js/hrefHandler.js"></script>
@@ -36,6 +35,7 @@
 
 <body>
   <script>
+    let trial = 0;
     let hideGMapsErr = setInterval(()=>{
       try {
         document.getElementsByClassName("dismissButton")[0]
@@ -44,6 +44,10 @@
         clearInterval(hideGMapsErr);
       } catch(e) {
         console.log("Dismissing GAPI took longer than usual");
+        trial+=1;
+        if(trial>9) {
+          clearInterval(hideGMapsErr);
+        }
       }
     },600)
   </script>
@@ -125,13 +129,23 @@
             <div class="flex-caption">
               <h3>Climate crisis and Sustainability</h3>
               <p>
-                We believe that every individual and organization has a crucial role to play in tackling the pressing challenges of the climate crisis.<br>
+                We believe that every individual and organization has a crucial role to play in tackling the pressing challenges of the climate crisis,<br>
                 
-                Through a combination of financial investing and onsite volunteering, we aim to take meaningful action towards building a sustainable future.<br>
+                and we believe in creating living spaces that contribute to a sustainable future via solar-powered homes, financial investing and onsite volunteering.<br><br>
+                
+                Your home is powered by renewable energy: and it makes complete sense since it is located on one of the sunnies cities in Spain!<br>
 
+                Each apartment in our community is connected to state-of-the-art solar panels. Enjoy the perks of a fixed-price electricity bills<br>
+                
+                while knowing you're reducing your environment impact on your electricity.<br>
+                
+                We also installed energy-efficient lighting to make sure the consumption has the lowest impact as possible.<br>
+                
+                Ready to make the move to solar-powered living? Explore our apartments and embark on a journey towards a brighter, cleaner future!<br><br>
+                
                 Beach and River Cleanup: We have and will get involved in cleaning up beaches and riverbanks to prevent plastic pollution from entering the oceans,<br>
                 
-                harming marine life, and contributing to climate change.<br>
+                harming marine life, and reducing our impact on the climate crisis.<br>
 
                 <!--
 
@@ -143,7 +157,7 @@
 
                 Energy conservation is a powerful way to reduce carbon footprints and combat climate change.<br>
 
-                Sustainable Agriculture: Invest in businesses that promote sustainable agriculture practices, such as regenerative farming and agroforestry.<br>
+                Sustainable Agriculture: Invest in businesses that promote sustainable agriculture practices, such as regenerative farming and agro-forestry.<br>
 
                 These methods not only mitigate climate change but also enhance soil health and biodiversity.<br>
 
@@ -207,18 +221,17 @@
       <div class="row">
         <div class="heading text-center">
           <h2>Upcoming Projects</h2>
-          <p>WIP</p>
+          <!--<p>WIP</p>-->
         </div>
 
-        <!--<div class="col-md-3 col-sm-6">
-
+        <div class="col-md-3 col-sm-6">
           <div class="project">
             <figure class="img-responsive">
-              <img src="images/img1.jpg">
+              <img src="images/fallbackimg.jpg" class="img-fallback">
               <figcaption>
-                <span class="project-details">Full project name</span>
-                <span class="project-price"><strong>$100</strong></span>
-                <span class="project-creator">creator name</span>
+                <span class="project-details">Rental house renovation</span>
+                <span class="project-price"><strong>Raising 10.000€</strong></span>
+                <span class="project-creator">Plaza de Toros</span>
               </figcaption>
             </figure>
           </div>
@@ -227,11 +240,11 @@
         <div class="col-md-3 col-sm-6">
           <div class="project">
             <figure class="img-responsive">
-              <img src="images/img2.jpg">
+              <img src="images/img1.PNG">
               <figcaption>
-                <span class="project-details">Full project name</span>
-                <span class="project-price"><strong>$100</strong></span>
-                <span class="project-creator">creator name</span>
+                <span class="project-details">Rental house</span>
+                <span class="project-price"><strong>600€ + gastos</strong></span>
+                <span class="project-creator">Plaza de Toros</span>
               </figcaption>
             </figure>
           </div>
@@ -240,11 +253,11 @@
         <div class="col-md-3 col-sm-6">
           <div class="project">
             <figure class="img-responsive">
-              <img src="images/img3.jpg">
+              <img src="images/fallbackimg.jpg" class="img-fallback">
               <figcaption>
-                <span class="project-details">Full project name</span>
-                <span class="project-price"><strong>$100</strong></span>
-                <span class="project-creator">creator name</span>
+                <span class="project-details">Private lending for rental house</span>
+                <span class="project-price"><strong>Starting from 5k at 5%/y</strong></span>
+                <span class="project-creator">Go to Contact Us</span>
               </figcaption>
             </figure>
           </div>
@@ -253,15 +266,16 @@
         <div class="col-md-3 col-sm-6">
           <div class="project">
             <figure class="img-responsive">
-              <img src="images/img4.jpg">
+              <img src="images/fallbackimg.jpg" class="img-fallback">
               <figcaption>
-                <span class="project-details">Full project name</span>
-                <span class="project-price"><strong>$100</strong></span>
-                <span class="project-creator">creator name</span>
+                <span class="project-details">TBD</span>
+                <span class="project-price"><strong>TBD</strong></span>
+                <span class="project-creator">TBD</span>
               </figcaption>
             </figure>
           </div>
-        </div>-->
+        </div>
+        <!-- -->
       </div>
     </div>
     <!--
@@ -340,15 +354,11 @@
       <div class="row feature design">
         <div class="area1 columns right">
           <h3>Clean and Modern Design.</h3>
-          <p>Lorem ipsum dolor sit amet, ea eum labitur scsstie percipitoleat fabulas complectitur deterruisset at pro.
-            Odio quaeque reformidans est eu, expetendis intellegebat has ut, viderer invenire ut his. Has molestie
-            percipit an. Falli volumus efficiantur sed id, ad vel noster propriae. Ius ut etiam vivendo, graeci
-            iudicabit constituto at mea. No soleat fabulas prodesset vel, ut quo solum dicunt.
-            Nec et jority have suffered alteration. </p>
-          <p>Odio quaeque reformidans est eu, expetendis intellegebat has ut, viderer invenire ut his. Has molestie
-            percipit an. Falli volumus efficiantur sed id, ad vel noster propriae. Ius ut etiam vivendo, graeci
-            iudicabit constituto at mea. No soleat fabulas prodesset vel, ut quo solum dicunt.
-            Nec et amet vidisse mentitumsstie percipitoleat fabulas. </p>
+          <p>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie. </p>
+          <p>Odio reformidans est eu, has ut, invenire ut his. Has molestie
+            an. Sed id, ad vel noster propriae. Ius ut vivendo, at mea.
+            No fabulas prodesset vel, ut quo nec et vidisse fabulas. </p>
           <a href="#" class="btn">Read More</a>
         </div>
         <div class="area2 columns feature-media left"> <img src="images/feature-img-1.png" alt="" width="100%"> </div>
@@ -356,36 +366,40 @@
       <div class="row dataTxt">
         <div class="col-md-4 col-sm-6">
           <h4>Our Business</h4>
-          <p>Lorem ipsum dolor consectetursit amet, consectetur adipiscing elit consectetur euismod </p>
-          <p>Lorem ipsum dolor sit amet, ea eum labitur scsstie percipitoleat fabulas complectitur deterruisset at pro.
-            Odio quaeque reformidans est eu, expetendis intellegebat has ut, viderer invenire ut his. Has molestie
-            percipit an. Falli volumus efficiantur sed id, ad vel noster propriae. Ius ut etiam vivendo, graeci
-            iudicabit constituto at mea.</p>
-
+          <p>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie. </p>
+          <p>Odio reformidans est eu, has ut, invenire ut his. Has molestie
+            an. Sed id, ad vel noster propriae. Ius ut vivendo, at mea.
+            No fabulas prodesset vel, ut quo nec et vidisse fabulas. </p>
           <br>
         </div>
 
         <div class="col-md-4 col-sm-6">
 
           <h4>Our Work</h4>
-          <p>Lorem ipsum dolor consectetursit amet, consectetur adipiscing elit consectetur euismod </p>
+          <p>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</p>
           <ul class="listArrow">
-            <li>Lorem ipsum dolor consectetursit amet, consectet</li>
-            <li>Has molestie percipit an. Falli volumus efficiantur</li>
-            <li>Falli volumus efficiantur sed id, ad vel noster</li>
-            <li>Lorem ipsum dolor consectetursit amet, consectetur</li>
-            <li>Ius ut etiam vivendo, graeci iudicabit constitutoa</li>
+            <li>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</li>
+            <li>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</li>
+            <li>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</li>
+            <li>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</li>
+            <li>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</li>
           </ul>
         </div>
 
         <div class="col-md-4 col-sm-6">
           <h4>Our Features</h4>
-          <p>Lorem ipsum dolor consectetursit amet, consectetur adipiscing elit consectetur euismod </p>
-          <p>Lorem ipsum dolor sit amet, ea eum labitur scsstie percipitoleat fabulas complectitur deterruisset at pro.
-            Odio quaeque reformidans est eu, expetendis intellegebat has ut, viderer invenire ut his. Has molestie
-            percipit an. Falli volumus efficiantur sed id, ad vel noster propriae. Ius ut etiam vivendo, graeci
-            iudicabit constituto at mea.</p>
-
+          <p>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie. </p>
+          <p>Odio reformidans est eu, has ut, invenire ut his. Has molestie
+            an. Sed id, ad vel noster propriae. Ius ut vivendo, at mea.
+            No fabulas prodesset vel, ut quo nec et vidisse fabulas. </p>
           <br>
         </div>
 
@@ -407,11 +421,10 @@
               <div class="media">
                 <a class="pull-left" href="#"><img class="media-object img-circle" src="images/photo-1.jpg" alt=""></a>
                 <div class="media-body">
-                  <h4 class="media-heading">El Grone's</h4>
+                  <h4 class="media-heading">El Gro</h4>
                   <span>Webdesigner</span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed volutpat est. Donec lobortis
-                    interdum volutpat. Maecenas bibendum dui quis pharetra tincidunt. Praesent posuere eu velit at
-                    scelerisque.</p>
+                  <p>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</p>
                 </div>
               </div>
             </div>
@@ -422,9 +435,8 @@
                 <div class="media-body">
                   <h4 class="media-heading">Egg form</h4>
                   <span>Webdesigner</span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed volutpat est. Donec lobortis
-                    interdum volutpat. Maecenas bibendum dui quis pharetra tincidunt. Praesent posuere eu velit at
-                    scelerisque.</p>
+                  <p>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</p>
                 </div>
               </div>
             </div>
@@ -438,7 +450,8 @@
     <div class="container text-center">
       <div class="heading">
         <h2>Our Projects</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, alias enim placeat earum quos ab.</p>
+        <p>Lorem ipsum dolor sit ea eum labitur fabulas at pro.
+            Odio reformidans est eu, has ut, invenire ut his. Has molestie.</p>
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -453,7 +466,7 @@
               style="position: relative; height: 438px;">
               <li class="item branding" style="position: absolute; left: 0px; top: 0px;"> <a href="images/work/1.jpg"
                   class="fancybox"> <img src="images/work/1.jpg" alt="">
-                  <div class="overlay"> <span>Etiam porta</span> </div>
+                  <div class="overlay"> <span>porta</span> </div>
                 </a> </li>
               <li class="item photography" style="position: absolute; left: 292px; top: 0px;"> <a
                   href="images/work/2.jpg" class="fancybox"> <img src="images/work/2.jpg" alt="">
@@ -461,27 +474,27 @@
                 </a> </li>
               <li class="item branding" style="position: absolute; left: 585px; top: 0px;"> <a href="images/work/3.jpg"
                   class="fancybox"> <img src="images/work/3.jpg" alt="">
-                  <div class="overlay"> <span>Vivamus quis</span> </div>
+                  <div class="overlay"> <span>Viva</span> </div>
                 </a> </li>
               <li class="item photography" style="position: absolute; left: 877px; top: 0px;"> <a
                   href="images/work/4.jpg" class="fancybox"> <img src="images/work/4.jpg" alt="">
-                  <div class="overlay"> <span>Donec ac tellus</span> </div>
+                  <div class="overlay"> <span>Dones</span> </div>
                 </a> </li>
               <li class="item photography" style="position: absolute; left: 0px; top: 219px;"> <a
                   href="images/work/5.jpg" class="fancybox"> <img src="images/work/5.jpg" alt="">
-                  <div class="overlay"> <span>Etiam volutpat</span> </div>
+                  <div class="overlay"> <span>Et volutpat</span> </div>
                 </a> </li>
               <li class="item web" style="position: absolute; left: 292px; top: 219px;"> <a href="images/work/6.jpg"
                   class="fancybox"> <img src="images/work/6.jpg" alt="">
-                  <div class="overlay"> <span>Donec congue </span> </div>
+                  <div class="overlay"> <span>Don</span> </div>
                 </a> </li>
               <li class="item photography" style="position: absolute; left: 585px; top: 219px;"> <a
                   href="images/work/7.jpg" class="fancybox"> <img src="images/work/7.jpg" alt="">
-                  <div class="overlay"> <span>Nullam a ullamcorper diam</span> </div>
+                  <div class="overlay"> <span>Nullam a ul diam</span> </div>
                 </a> </li>
               <li class="item web" style="position: absolute; left: 877px; top: 219px;"> <a href="images/work/8.jpg"
                   class="fancybox"> <img src="images/work/8.jpg" alt="">
-                  <div class="overlay"> <span>Etiam consequat</span> </div>
+                  <div class="overlay"> <span>Et cons</span> </div>
                 </a> </li>
             </ul>
           </div>
@@ -524,7 +537,7 @@
               <div class="member-img">
                 <img class="img-responsive" src="images/photo-3.jpg" alt="">
               </div>
-              <h4>Ranith Kays</h4>
+              <h4>Ran Kays</h4>
               <span class="pos">Manager</span>
               <div class="team-socials"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
                     class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> </div>
@@ -584,18 +597,18 @@
 
             <p>
               Rockline Corporate <br />
-              Some Stree Name 012 <br />
+              Some Street Name 012 <br />
               State, some City
             </p>
 
             <p>
               Phone: 0 123 456 789 0 <br />
-              Email: info [@] webthemez.com
+              Email: info [@] web-theme.com
             </p><br />
 
             <h3>Template Info</h3>
 
-            <p>Rockline is a free website template by <a href="http://www.webthemez.com/">webthemez.com</a>.
+            <p>Rockline is a free website template by <a href="http://www.webthemez.com/">web-theme.com</a>.
               released and licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">
                 Creative Commons Attribution 3.0 License</a>
               <a href="http://www.webthemez.com/">my website</a>.
@@ -612,7 +625,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center"> Copyright 2014 | All Rights Reserved -- Template by <a
-            href="http://webThemez.com">WebThemez.com</a> </div>
+            href="http://webThemez.com">WebTheme.com</a> </div>
       </div>
     </div>
   </section>
