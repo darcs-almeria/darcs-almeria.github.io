@@ -31,10 +31,6 @@
 	background: var(--red);
 }
 
-html {
-	background-color: var(--black);
-}
-
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700);
 
@@ -396,6 +392,14 @@ html {
 	font-family: 'Open Sans', sans-serif;
 }
 
+*[disabled] {
+	cursor: not-allowed;
+}
+
+html {
+	background-color: var(--black);
+}
+
 body {
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
@@ -510,6 +514,21 @@ input {
 	display: inline-block;
 }
 
+.bg-img {
+	background: url("../images/fallback-img.jpg") no-repeat;
+	width: auto;
+	height: 10em;
+	margin: 0;
+	position: relative;
+	background-size: contain;
+}
+.fg-img {
+	height: 8em;
+	left: 4em;
+	position: absolute;
+	top: 1em;
+	width: 10em !important;
+}
 .img-responsive>img {
 	height: 10em;
 }
