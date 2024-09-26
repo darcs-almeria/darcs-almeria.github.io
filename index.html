@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!--[if lt IE 9]> 
+  <!--[if lt IE 9]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
   <title>DARCS Almería</title>
@@ -36,28 +36,26 @@
 <body>
   <script>
     let trial = 0;
-    let hideGMapsErr = setInterval(()=>{
+    let hideGMapsErr = setInterval(() => {
       try {
         document.getElementsByClassName("dismissButton")[0]
           .parentElement.parentElement.parentElement.parentElement
           .style.display = "none";
         clearInterval(hideGMapsErr);
-      } catch(e) {
+      } catch (e) {
         console.log("Dismissing GAPI took longer than usual");
-        trial+=1;
-        if(trial>9) {
+        trial += 1;
+        if (trial > 9) {
           clearInterval(hideGMapsErr);
         }
       }
-    },600)
+    }, 600)
   </script>
   <header class="header">
     <div class="container">
       <nav class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
-          <button type="button" id="nav-toggle" class="navbar-toggle"
-            data-toggle="collapse" data-target="#main-nav"
-          >
+          <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
             <span class="sr-only">
               Toggle navigation
             </span> <span class="icon-bar">
@@ -94,20 +92,21 @@
       <div id="main-slider" class="flexslider">
         <ul class="slides">
           <li class="da-orange">
-            <img src="images/slides/1.jpg" alt="" />
+            <img src="images/slides/devops-analytics.jpg" alt="" />
             <div class="flex-caption">
               <h3>DevOps and Analytics</h3>
               <p>
                 We specialize in empowering businesses to thrive in the dynamic and data-driven world of technology.<br>
 
-                Our expert team brings together a unique blend of cutting-edge DevOps practices and powerful analytics strategies to streamline your operations,<br>
+                Our expert team brings together a unique blend of cutting-edge DevOps practices and powerful analytics
+                strategies to streamline your operations,<br>
 
                 boost productivity, and drive data-backed decision-making.
               </p>
             </div>
           </li>
           <li class="r-purple">
-            <img src="images/slides/2.jpg" alt="" />
+            <img src="images/slides/rentals.jpg" alt="" />
             <div class="flex-caption">
               <h3>Rentals</h3>
               <p>
@@ -120,32 +119,39 @@
                 We genuinely care about our tenants and believe that landlords should be responsive,<br>
 
                 address maintenance issues ASAP, and provide open communication channels with our tenants<br>
-                
+
                 to solve their needs promptly.
               </p>
             </div>
           </li>
           <li class="cs-green">
-            <img src="images/slides/3.jpg" alt="" />
+            <img src="images/slides/climate-crisis-sustainability.jpg" alt="" />
             <div class="flex-caption">
               <h3>Climate crisis and Sustainability</h3>
               <p>
-                We believe that every individual and organization has a crucial role to play in tackling the pressing challenges of the climate crisis,<br>
-                
-                and we believe in creating living spaces that contribute to a sustainable future via solar-powered homes, financial investing and onsite volunteering.<br><br>
-                
-                Your home is powered by renewable energy: and it makes complete sense since it is located on one of the sunnies cities in Spain!<br>
+                We believe that every individual and organization has a crucial role to play in tackling the pressing
+                challenges of the climate crisis,<br>
 
-                Each apartment in our community is connected to state-of-the-art solar panels. Enjoy the perks of a fixed-price electricity bills<br>
-                
+                and we believe in creating living spaces that contribute to a sustainable future via solar-powered
+                homes, financial investing and onsite volunteering.<br><br>
+
+                Your home is powered by renewable energy: and it makes complete sense since it is located on one of the
+                sunnies cities in Spain!<br>
+
+                Each apartment in our community is connected to state-of-the-art solar panels. Enjoy the perks of a
+                fixed-price electricity bills<br>
+
                 while knowing you're reducing your environment impact on your electricity.<br>
-                
-                We also installed energy-efficient lighting to make sure the consumption has the lowest impact as possible.<br>
-                
-                Ready to make the move to solar-powered living? Explore our apartments and embark on a journey towards a brighter, cleaner future!<br><br>
-                
-                Beach and River Cleanup: We have and will get involved in cleaning up beaches and riverbanks to prevent plastic pollution from entering the oceans,<br>
-                
+
+                We also installed energy-efficient lighting to make sure the consumption has the lowest impact as
+                possible.<br>
+
+                Ready to make the move to solar-powered living? Explore our apartments and embark on a journey towards a
+                brighter, cleaner future!<br><br>
+
+                Beach and River Cleanup: We have and will get involved in cleaning up beaches and riverbanks to prevent
+                plastic pollution from entering the oceans,<br>
+
                 harming marine life, and reducing our impact on the climate crisis.<br>
 
                 <!--
@@ -195,22 +201,21 @@
   <div id="monto" class="grid-container-2">
     <div>
       <div class="bordered">Raised<br>
-      &nbsp;&nbsp;&nbsp;<span id="amountEur">___.___,__ €</span>&nbsp;<br>
-      <span id="amountDkk">_.___.___,__ DKK</span>&nbsp;<br>
-      <div style="height:0.3em"></div></div>
-      <div class="bordered">Started at:<br>
-      <span id="startRegr"></span></div>
+        &nbsp;&nbsp;&nbsp;<span id="amountEur">___.___,__ €</span>&nbsp;<br>
+        <span id="amountDkk">_.___.___,__ DKK</span>&nbsp;<br>
+        <div style="height:0.3em"></div>
       </div>
+      <div class="bordered">Started at:<br>
+        <span id="startRegr"></span>
+      </div>
+    </div>
     <div class="bordered">
       Next milestone:<br>
-      &nbsp;<small>&nbsp;</small><input id="amntEurMs"
-        type="number" value="200000" style="width:6em"
-        onchange="handleMilestoneAmount(this.value)"
-        class="bordered"
-      ></input><br>
+      &nbsp;<small>&nbsp;</small><input id="amntEurMs" type="number" value="250000" style="width:6em"
+        onchange="handleMilestoneAmount(this.value)" class="bordered"></input><br>
       <span class="after-input"><span id="dateEurMs"></span><br>
-      in <span id="yearsMs"></span> y, at <span id="yearsSelfMs"></span> yo,<br>
-      equals <span id="adjustedAmount"></span>&nbsp;</span>
+        in <span id="yearsMs"></span> y, at <span id="yearsSelfMs"></span> yo,<br>
+        equals <span id="adjustedAmount"></span>&nbsp;</span>
     </div>
   </div>
   <section id="map">
@@ -231,7 +236,7 @@
             <figure class="img-responsive">
               <div class="bg-img img-fallback">
                 <img src="images/house-rep-outline.png" class="fg-img">
-               </div>
+              </div>
               <figcaption>
                 <span class="project-details">Rental house renovation</span>
                 <span class="project-price"><strong>Raising 10.000€</strong></span>
@@ -622,7 +627,7 @@
             <p>
               This page was based on a template by <a href="http://www.webthemez.com/">web-theme.com</a>.
               released and licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">
-              Creative Commons Attribution 3.0 License</a>.
+                Creative Commons Attribution 3.0 License</a>.
             </p>
 
           </aside>
@@ -643,7 +648,7 @@
     </div>
   </section>
   -->
-  
+
   <a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a>
 
   <script>
@@ -655,19 +660,19 @@
     const yearsMsDomObj = document.getElementById("yearsMs");
     const yearsSelfMsDomObj = document.getElementById("yearsSelfMs");
     const adjustedAmountDom = document.getElementById("adjustedAmount");
-    
+
     const dg = parseFloat(globalThis.dg);
     const oa00 = parseInt(globalThis.oa00, 10);
     const bd = globalThis.bd;
 
     const milliSecondsPerDay = 24 * 60 * 60 * 1000;
     const daysBetween1900and1900 = 25569; // Diff Google Sheets and Browser for regression
-    const dayStartRegr = (oa00/dg - daysBetween1900and1900);
-    console.log("dayStartRegr",dayStartRegr)
+    const dayStartRegr = (oa00 / dg - daysBetween1900and1900);
+    console.log("dayStartRegr", dayStartRegr)
     const startRegr = new Date(
       dayStartRegr * milliSecondsPerDay
-    ).toISOString().replace("T"," ").substring(0,16);
-    console.log("startRegr",startRegr);
+    ).toISOString().replace("T", " ").substring(0, 16);
+    console.log("startRegr", startRegr);
     startRegrDomObj.innerText = startRegr;
 
     function handleMilestoneAmount(amountEurMs) {
@@ -675,34 +680,36 @@
       amntEurMsDomObj.innerText = new Intl.NumberFormat(
         'es-ES', { style: "currency", currency: "EUR" }
       ).format(amountEurMs);
-      const dayEurMs = (dayStartRegr + amountEurMs/dg) * milliSecondsPerDay;
-      const dateEurMs = new Date(dayEurMs).toISOString().replace("T"," ").substring(0, 16);
+      const dayEurMs = (dayStartRegr + amountEurMs / dg) * milliSecondsPerDay;
+      const dateEurMs = new Date(dayEurMs).toISOString().replace("T", " ").substring(0, 16);
       dateEurMsDomObj.innerText = dateEurMs;
       const yearsMsInt = (
         (dayEurMs - Date.now()) / milliSecondsPerDay / 365
       );
       yearsMsDomObj.innerText = yearsMsInt.toFixed(2);
-      const inflacion4p = 1.04**yearsMsInt;
+      const inflacion4p = 1.04 ** yearsMsInt;
       const yearsSelfMs = (
         (dayEurMs - new Date(bd).getTime()) / milliSecondsPerDay / 365
       ).toFixed(2);
       yearsSelfMsDomObj.innerText = yearsSelfMs;
       adjustedAmountDom.innerText = new Intl.NumberFormat(
         'es-ES', { style: "currency", currency: "EUR" }
-      ).format(amountEurMs/inflacion4p);
+      ).format(amountEurMs / inflacion4p);
     }
 
+    handleMilestoneAmount(250000);
+
     setInterval(
-      ()=>{
-        const currentAmount = (dg*(
-          ( (new Date().getTime()) / milliSecondsPerDay )+daysBetween1900and1900
+      () => {
+        const currentAmount = (dg * (
+          ((new Date().getTime()) / milliSecondsPerDay) + daysBetween1900and1900
         ) - oa00);
         const currentAmountEur = new Intl.NumberFormat(
           'es-ES', { style: "currency", currency: "EUR" }
         ).format(currentAmount);
         const currentAmountDkk = new Intl.NumberFormat(
           'es-ES', { style: "currency", currency: "DKK" }
-        ).format(currentAmount/.1343);
+        ).format(currentAmount / .1343);
         amountEurDomObj.innerText = currentAmountEur;
         amountDkkDomObj.innerText = currentAmountDkk;
       }, 1000
